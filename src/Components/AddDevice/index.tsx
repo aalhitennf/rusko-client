@@ -5,15 +5,15 @@ import { Button, TextInput, StyleSheet, Text, View } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-native';
 import uuid from 'react-native-uuid';
-import DeviceInfo from 'react-native-device-info';
 // State
 import { themeSelector } from '../../state/selector';
+import { addDevice } from '../../state/actions/deviceActions';
 // Utils
 import { requestHandler } from '../../utils/requestHandler';
+import { getDeviceIdentifier } from '../../utils/helpers';
 // Types
 import Device from '../Devices/Device';
 import { MessageAction } from '../../state/types';
-import { addDevice } from '../../state/actions/deviceActions';
 
 const AddDevice: React.FC = () => {
   const [name, setName] = useState<string>('Desktop');
@@ -88,8 +88,7 @@ const AddDevice: React.FC = () => {
       port,
       password,
     });
-    const data =
-      DeviceInfo.getUniqueId() + ':' + (await DeviceInfo.getDeviceName());
+    const data = await getDeviceIdentifier();
     const source = axios.CancelToken.source();
     setCancelToken(source);
     const request = {

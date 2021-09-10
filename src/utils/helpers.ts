@@ -27,9 +27,7 @@ export const createJWT = async (password: string): Promise<string> => {
 };
 
 export const getDeviceIdentifier = async (): Promise<string> => {
-  return (
-    DeviceInfo.getUniqueId() +
-    ':' +
-    (await DeviceInfo.getDeviceName()).replace(' ', '_')
-  );
+  let name = await DeviceInfo.getDeviceName();
+  name = name.replace(new RegExp(' ', 'g'), '_');
+  return DeviceInfo.getUniqueId() + ':' + name;
 };

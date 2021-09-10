@@ -1,0 +1,21 @@
+module.exports = {
+  root: true,
+  plugins: ['react-redux'],
+  extends: ['@react-native-community', 'plugin:react-redux/recommended'],
+  rules: {
+    indent: ['error', 2, { SwitchCase: 1 }],
+    quotes: ['error', 'single', { avoidEscape: true }],
+    'no-empty-function': 'error',
+    '@typescript-eslint/no-empty-function': 'error',
+    'react/display-name': 'off',
+    'react/prop-types': 'off',
+    semi: ['error', 'always'],
+    'no-trailing-spaces': 'error',
+    'eol-last': ['error', 'always'],
+    'space-before-blocks': ['error', 'always'],
+    'object-curly-spacing': ['error', 'always'],
+    '@typescript-eslint/no-unused-vars': ['error'],
+    'react-redux/prefer-separate-component-file': ['off'],
+    'react-hooks/exhaustive-deps': ['off'],
+  },
+};

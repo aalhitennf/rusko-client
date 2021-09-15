@@ -11,6 +11,12 @@ Rusko allows you to run commands, control your mouse, send key presses and trans
 
 **Notice**: Mouse and keyboard input works only in x11 and Windows. Wayland input isn't supported.
 
+**Building**
+
+Instructions:  
+
+https://reactnative.dev/docs/signed-apk-android
+   
 </br>
 
 **Usage**  
